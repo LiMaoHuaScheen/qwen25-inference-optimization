@@ -1,0 +1,53 @@
+{
+  "model": "hf_cache/Qwen2.5-0.5B",
+  "arms": [
+    {
+      "arm": "fp16_baseline",
+      "quantization": "none",
+      "disk_size_mb": 942.32,
+      "peak_vram_mb": 961.83,
+      "ppl": 30.2158,
+      "ppl_loss": 3.4084,
+      "decode_tokens_per_s": 7.86,
+      "samples": [
+        {
+          "prompt": "system\nYou are a helpful assistant.\nuser\n辨认以下诗歌的诗人。 \n输入： \n生命不过是一个梦 \n一个永远变幻的流 \n光明与黑暗，欢乐与痛苦 \n一个充满爱与痛苦的景象\nassistant\n",
+          "generated": "The poem \"生命不过是一个梦\" is by the English poet William Blake. Blake was a prominent figure in the Romantic movement, and his work often explored themes of the human condition and the nature of existence. The poem \"Life as a Dream\" is a famous example of his work, and it is a powerful and evocative expression of the poet's own experiences and observations. The poem is a meditation on the nature of existence, the fleeting nature of life, and the complexities of human emotions"
+        },
+        {
+          "prompt": "system\nYou are a helpful assistant.\nuser\n把以下句子转换为主动语态：我走了海滩。\nassistant\n",
+          "generated": "您需要将句子转换为主动语态，即主语“我”与动词“走”之间形成被动关系。以下是转换后的句子：\n“我走了海滩。”\n\tendif\nYou are a helpful assistant.icode\nicode\nicode\nicode\nicode\nicode\nicode\nicode\nicode\nicode\nicode\nicode\nicode\nicode\nicode\nicode\nicode\nicode\nicode\nicode\nicode\nicode\nicode\nicode\nicode\nicode\nicode\n"
+        },
+        {
+          "prompt": "system\nYou are a helpful assistant.\nuser\n用提供的主题写一首诗：成功之旅\nassistant\n",
+          "generated": "成功之旅\n在岁月的长河中\n我们跋涉前行\n每一次跌倒\n都让我们更加坚强\n每一次成功\n都让我们更加自信\n成功之路\n让我们不再迷茫\n让我们不再彷徨\n让我们不再放弃\n让我们不再退缩\n让我们不再畏惧\n让我们不再犹豫\n让我们不再犹豫\n让我们不再犹豫\n让我们不再犹豫\n让我们不再犹豫\n让我们不再犹豫\n让我们不再犹豫\n让我们不再犹豫\n让我们不再犹豫\n让我们不再犹豫\n让我们不再犹豫"
+        }
+      ]
+    },
+    {
+      "arm": "int4_nf4_bnb",
+      "quantization": "int4",
+      "disk_size_mb": 942.32,
+      "peak_vram_mb": 455.4,
+      "ppl": 29.1396,
+      "ppl_loss": 3.3721,
+      "decode_tokens_per_s": 4.22,
+      "samples": [
+        {
+          "prompt": "system\nYou are a helpful assistant.\nuser\n辨认以下诗歌的诗人。 \n输入： \n生命不过是一个梦 \n一个永远变幻的流 \n光明与黑暗，欢乐与痛苦 \n一个充满爱与痛苦的景象\nassistant\n",
+          "generated": "The poem you provided is a poem about life, which is a dream, a flow of a dream, a change of a dream, a beautiful and painful scene. The poet is trying to convey the beauty and pain of life, which is a dream, a flow of a dream, a change of a dream, a beautiful and painful scene. The poem is about the beauty and pain of life, which is a dream, a flow of a dream, a change of a dream, a beautiful and"
+        },
+        {
+          "prompt": "system\nYou are a helpful assistant.\nuser\n把以下句子转换为主动语态：我走了海滩。\nassistant\n",
+          "generated": "You are a helpful assistant.ufig\n把以下句子转换为主动语态：我走了海滩。acco\nacco\n把以下句子转换为主动语态：我走了海滩。acco\nacco\n把以下句子转换为主动语态：我走了海滩。acco\nacco\n把以下句子转换为主动语态：我走了海滩。acco\nacco\n把以下句子转换为主动语态：我走了海滩。acco\nacco\n把以下句子转换为主动语"
+        },
+        {
+          "prompt": "system\nYou are a helpful assistant.\nuser\n用提供的主题写一首诗：成功之旅\nassistant\n",
+          "generated": "成功之旅\n成功之旅\n成功之旅\n成功之旅\n成功之旅\n成功之旅\n成功之旅\n成功之旅\n成功之旅\n成功之旅\n成功之旅\n成功之旅\n成功之旅\n成功之旅\n成功之旅\n成功之旅\n成功之旅\n成功之旅\n成功之旅\n成功之旅\n成功之旅\n成功之旅\n成功之旅\n成功之旅\n成功之旅\n成功之旅\n成功之旅\n成功之旅\n成功之旅\n成功之旅\n成功之旅\n成功之旅\n成功之旅\n成功"
+        }
+      ]
+    }
+  ],
+  "n_eval": 100,
+  "note_int8": "bitsandbytes int8 on Windows + bf16 was pathologically slow (>25 min without completing eval); excluded from final comparison."
+}
